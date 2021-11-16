@@ -1,5 +1,5 @@
 # Motor_de_arte_NFT
-El "Generador de arte generativo" es una herramienta que se utiliza para crear varias instancias diferentes de obras de arte basadas en las capas proporcionadas.
+El motor de arte generativo es una herramienta que se utiliza para crear varias instancias diferentes de obras de arte basadas en las capas proporcionadas.
 
 Cree arte generativo mediante el uso de canvas api y node js. Antes de utilizar el motor de generación, asegúrese de tener instalado node.js.
 
