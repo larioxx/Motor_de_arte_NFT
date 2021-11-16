@@ -91,3 +91,104 @@ Si quieres jugar con diferentes modos de fusión, puedes agregar un campo `blend
 Si necesita que las capas tengan una opacidad diferente, puede agregar el campo `opacity: 0.7` al objeto layerOrder `options` también.
 
 Si desea tener una capa _ignorada_ en la comprobación de unicidad del ADN, puede establecer `bypassDNA: true` en el objeto `options`. Esto tiene el efecto de asegurarse de que el resto de los rasgos sean únicos sin considerar las Capas de "Fondo" como rasgos, por ejemplo. Las capas _están_ incluidas en la imagen final.
+
+Para usar un nombre de atributo de metadatos diferente, puede agregar el `displayName: "Ojo Increible"` al objeto `options`. Todas las opciones son opcionales y se pueden agregar en la misma capa si lo desea.
+
+Aquí hay un ejemplo de cómo puede jugar con ambos campos de filtro:
+
+```js
+const layerConfigurations = [
+  {
+    growEditionSizeTo: 5,
+    layersOrder: [
+      { name: "Fondo" , {
+        options: {
+          bypassDNA: false;
+        }
+      }},
+      { name: "Globo Ocular" },
+      {
+        name: "Color Ojo",
+        options: {
+          blend: MODE.destinationIn,
+          opacity: 0.2,
+          displayName: "Ojo Increíble",
+        },
+      },
+      { name: "Iris" },
+      { name: "Brillo" },
+      { name: "Parpado Inferior", options: { blend: MODE.overlay, opacity: 0.7 } },
+      { name: "Parpado Superior" },
+    ],
+  },
+];
+```
+
+Aquí hay una lista de los diferentes modos de fusión que puede usar opcionalmente.
+
+```js
+const MODE = {
+  sourceOver: "source-over",
+  sourceIn: "source-in",
+  sourceOut: "source-out",
+  sourceAtop: "source-out",
+  destinationOver: "destination-over",
+  destinationIn: "destination-in",
+  destinationOut: "destination-out",
+  destinationAtop: "destination-atop",
+  lighter: "lighter",
+  copy: "copy",
+  xor: "xor",
+  multiply: "multiply",
+  screen: "screen",
+  overlay: "overlay",
+  darken: "darken",
+  lighten: "lighten",
+  colorDodge: "color-dodge",
+  colorBurn: "color-burn",
+  hardLight: "hard-light",
+  softLight: "soft-light",
+  difference: "difference",
+  exclusion: "exclusion",
+  hue: "hue",
+  saturation: "saturation",
+  color: "color",
+  luminosity: "luminosity",
+};
+```
+
+Cuando esté listo, ejecute el siguiente comando y su arte resultante estará en el directorio `build/images` y el json en el directorio `build/json`:
+
+```sh
+npm run build
+```
+
+o
+
+```sh
+node index.js
+```
+
+El programa generará todas las imágenes en el directorio `build/images` junto con los archivos de metadatos en el directorio `build/json`. Cada colección tendrá un archivo `_metadata.json` que consta de todos los metadatos de la colección dentro del directorio `build/json`. La carpeta `build/json` también contendrá todos los archivos .json individuales que representan cada archivo de imagen. El archivo .json único de una imagen se verá así:
+
+```json
+{
+  "dna": "d956cdf4e460508b5ff90c21974124f68d6edc34",
+  "name": "#1",
+  "description": "Esta es la descripción de tu proyecto NFT",
+  "image": "https://larioxx/nft/1.png",
+  "edition": 1,
+  "date": 1731990799975,
+  "attributes": [
+    { "trait_type": "Fondo", "value": "Negro" },
+    { "trait_type": "Globo Ocular", "value": "Rojo" },
+    { "trait_type": "Color Ojo", "value": "Amarillo" },
+    { "trait_type": "Iris", "value": "Pequeño" },
+    { "trait_type": "Brillo", "value": "Sombras" },
+    { "trait_type": "Parpado Inferior", "value": "Bajo" },
+    { "trait_type": "Parpado SUperior", "value": "Medio" }
+  ],
+  "compiler": "Generador de Arte"
+}
+```
+
