@@ -10,3 +10,14 @@ Si está clonando el proyecto, ejecútelo primero; de lo contrario, puede descar
 ```sh
 git clone https://github.com/larioxx/Motor_de_arte_NFT.git
 ```
+Vaya a la raíz de su carpeta y ejecute este comando si tiene instalado Yarn.
+
+```sh
+yarn install
+```
+
+Alternativamente, puede ejecutar este comando si tiene un nodo instalado.
+
+```sh
+npm install
+```
