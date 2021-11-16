@@ -83,3 +83,11 @@ const layerConfigurations = [
 Actualiza el tamaño de tu `format`, es decir, el tamaño de la imagen generada, y el `growEditionSizeTo` en cada objeto `layerConfigurations`, que es la cantidad de variación generada.
 
 Puede mezclar el orden de `layerConfigurations` sobre cómo se guardan las imágenes estableciendo la variable `shuffleLayerConfigurations` en el archivo `config.js` en "true". Es "false" por defecto y guardará todas las imágenes en orden numérico.
+
+Si desea tener registros para depurar y ver qué sucede cuando genera imágenes, puede establecer la variable `debugLogs` en el archivo `config.js` en "true". Es "false" de forma predeterminada, por lo que solo verá registros generales.
+
+Si quieres jugar con diferentes modos de fusión, puedes agregar un campo `blend: MODE.colorBurn` al objeto layerOrder `options`.
+
+Si necesita que las capas tengan una opacidad diferente, puede agregar el campo `opacity: 0.7` al objeto layerOrder `options` también.
+
+Si desea tener una capa _ignorada_ en la comprobación de unicidad del ADN, puede establecer `bypassDNA: true` en el objeto `options`. Esto tiene el efecto de asegurarse de que el resto de los rasgos sean únicos sin considerar las Capas de "Fondo" como rasgos, por ejemplo. Las capas _están_ incluidas en la imagen final.
