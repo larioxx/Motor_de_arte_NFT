@@ -80,3 +80,6 @@ const layerConfigurations = [
 ];
 ```
 
+Actualiza el tamaño de tu `format`, es decir, el tamaño de la imagen generada, y el `growEditionSizeTo` en cada objeto `layerConfigurations`, que es la cantidad de variación generada.
+
+Puede mezclar el orden de `layerConfigurations` sobre cómo se guardan las imágenes estableciendo la variable `shuffleLayerConfigurations` en el archivo `config.js` en "true". Es "false" por defecto y guardará todas las imágenes en orden numérico.
