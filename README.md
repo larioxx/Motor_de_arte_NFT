@@ -192,3 +192,18 @@ El programa generará todas las imágenes en el directorio `build/images` junto 
 }
 ```
 
+También puede agregar metadatos adicionales a cada archivo de metadatos agregando sus elementos adicionales, pares (key:value) a la variable de objeto `extraMetadata` en el archivo `config.js`.
+
+```js
+const extraMetadata = {
+  creator: "Larioxx",
+};
+```
+Si no necesita metadatos adicionales, simplemente deje el objeto vacío. Está vacío por defecto.
+
+```js
+const extraMetadata = {};
+```
+
+Eso es todo, lo has conseguido. Felicidades!
+
