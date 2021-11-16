@@ -207,3 +207,78 @@ const extraMetadata = {};
 
 Eso es todo, lo has conseguido. Felicidades!
 
+## Utilidades
+
+### Actualizando baseUri para IPFS y descripción
+
+Es posible que desee actualizar la baseUri y la descripción después de haber ejecutado su colección. Para actualizar la baseUri y la descripción, simplemente ejecute:
+
+```sh
+npm run update_info
+```
+
+### Genera una previsualización de tus imagenes
+
+Cree un collage de imágenes de vista previa de su colección, ejecute:
+
+```sh
+npm run preview
+```
+
+### Genera imágenes pixeladas de la colección
+
+Para convertir imágenes en imágenes pixeladas, necesitaría una lista de imágenes que desea convertir. Así que primero ejecute el generador.
+
+Luego, simplemente ejecute este comando:
+
+```sh
+npm run pixelate
+```
+
+Todas sus imágenes se enviarán al directorio `/build/pixel_images`.
+Si desea cambiar la proporción de la pixelación, puede actualizar la propiedad de proporción en el objeto `pixelFormat` en el archivo `src/config.js`. Cuanto menor sea el número de la izquierda, más pixelada estará la imagen.
+
+```js
+const pixelFormat = {
+  ratio: 5 / 128,
+};
+```
+
+### Genera un GIF de la colección
+
+Para exportar gifs basados ​​en las capas creadas, solo necesita establecer la exportación en el objeto `gif` en el archivo `src/config.js` en `true`. También puede jugar con el "repeat", la "quality" y el "delay" del gif exportado.
+
+Establecer el `repeat: -1` producirá un render de una sola vez y` repeat: 0` se repetirá para siempre.
+
+```js
+const gif = {
+  export: true,
+  repeat: 0,
+  quality: 100,
+  delay: 500,
+};
+```
+### Impresión de datos "raros" (función experimental)
+
+Para ver los porcentajes de cada atributo en su colección, ejecute:
+
+```sh
+npm run rarity
+```
+
+La salida se verá así:
+
+```sh
+Trait type: Bottom lid
+{ trait: 'Altas', chance: '20', occurrence: '15% de 100%' }
+{ trait: 'Bajas', chance: '40', occurrence: '40% de 100%' }
+{ trait: 'Medias', chance: '40', occurrence: '45% de 100%' }
+
+Trait type: Iris
+{ trait: 'Largo', chance: '20', occurrence: '15% de 100%' }
+{ trait: 'Medio', chance: '20', occurrence: '15% de 100%' }
+{ trait: 'Pequeño', chance: '60', occurrence: '70% de 100%' }
+```
+
+Espero que crees algunas obras de arte increíbles con este código
+
