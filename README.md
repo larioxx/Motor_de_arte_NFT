@@ -47,3 +47,36 @@ const layerConfigurations = [
 El `name` de cada objeto de capa representa el nombre de la carpeta (en`/capas/`) en la que residen las imágenes.
 
 Opcionalmente, ahora puede agregar múltiples "layerConfigurations" a su colección. Cada configuración puede ser única y tener diferentes órdenes de capas, usar las mismas capas o introducir nuevas. Esto le da al artista flexibilidad a la hora de ajustar sus colecciones a sus necesidades.
+
+_Ejemplo:_ Si estuviera creando un diseño de retrato, es posible que tenga un fondo, luego una cabeza, una boca, ojos, gafas y luego sombreros y desee crear una nueva raza o simplemente reordenar las capas o incluso introducir nuevas capas, entonces eres `layerConfigurations` y` layerOrder` se vería así:
+
+```js
+const layerConfigurations = [
+  {
+    // Creates up to 50 artworks
+    growEditionSizeTo: 50,
+    layersOrder: [
+      { name: "Fondo" },
+      { name: "Cabeza" },
+      { name: "Boca" },
+      { name: "Ojos" },
+      { name: "Gafas" },
+      { name: "Sombrero" },
+    ],
+  },
+  {
+    // Crea 100 obras de arte adicionales
+    growEditionSizeTo: 150,
+    layersOrder: [
+      { name: "Fondo" },
+      { name: "Cabeza" },
+      { name: "Boca" },
+      { name: "Ojos" },
+      { name: "Gafas" },
+      { name: "Sombrero" },
+      { name: "Especial" },
+    ],
+  },
+];
+```
+
