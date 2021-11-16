@@ -157,7 +157,7 @@ const MODE = {
 };
 ```
 
-Cuando esté listo, ejecute el siguiente comando y su arte resultante estará en el directorio `build/images` y el json en el directorio `build/json`:
+Cuando esté listo, ejecute el siguiente comando y su arte resultante estará en el directorio `build/images` y el .json en el directorio `build/json`:
 
 ```sh
 npm run build
