@@ -24,3 +24,22 @@ npm install
 ## Uso ℹ️
 
 Cree sus diferentes capas como carpetas en el directorio 'capas' y agregue todos los archivos de capa en estos directorios. Puede nombrar los archivos de cualquier forma siempre que tenga un peso de rareza adjunto en el nombre del archivo, así: `ejemplo #70.png`. Opcionalmente, puede cambiar el delimitador `#` a cualquier cosa que le gustaría usar en la variable `rarityDelimiter` en el archivo `src/config.js`.
+
+Una vez que tenga todas sus capas, vaya a `src/config.js` y actualice la matriz de objetos `layerConfigurations` objetos `layerOrder` para que sea el nombre de su carpeta de capas en el orden de la capa posterior a la capa frontal.
+
+_Ejemplo: _Si estuviera creando un diseño de retrato, es posible que tenga un fondo, luego una cabeza, una boca, ojos, gafas y luego sombreros, por lo que su `layerOrder` se vería así:
+
+```js
+const layerConfigurations = [
+  {
+    growEditionSizeTo: 100,
+    layersOrder: [
+      { name: "Cabeza" },
+      { name: "Boca" },
+      { name: "Ojos" },
+      { name: "Gafas" },
+      { name: "Cabeza" },
+    ],
+  },
+];
+```
