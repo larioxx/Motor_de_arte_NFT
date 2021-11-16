@@ -1,0 +1,30 @@
+{
+  "name": "larioxx_motor_de_arte",
+  "version": "1.1.1",
+  "description": "El motor de arte de Larioxx es una herramienta que se utiliza para crear varias instancias diferentes de obras de arte basadas en las capas proporcionadas.",
+  "main": "index.js",
+  "bin": "index.js",
+  "pkg": {
+    "assets": [
+      "layers/**/*",
+      "node_modules/**/*",
+      "src/**/*"
+    ]
+  },
+  "scripts": {
+    "build": "node index.js",
+    "generate": "node index.js",
+    "rarity": "node utils/rarity.js",
+    "preview": "node utils/preview.js",
+    "pixelate": "node utils/pixelate.js",
+    "update_info": "node utils/update_info.js",
+    "preview_gif": "node utils/preview_gif.js"
+  },
+  "author": "Larioxx",
+  "license": "MIT",
+  "dependencies": {
+    "canvas": "^2.8.0",
+    "gif-encoder-2": "^1.0.5",
+    "sha1": "^1.1.1"
+  }
+}
