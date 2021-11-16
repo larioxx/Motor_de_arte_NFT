@@ -43,3 +43,7 @@ const layerConfigurations = [
   },
 ];
 ```
+
+El `name` de cada objeto de capa representa el nombre de la carpeta (en`/capas/`) en la que residen las imágenes.
+
+Opcionalmente, ahora puede agregar múltiples "layerConfigurations" a su colección. Cada configuración puede ser única y tener diferentes órdenes de capas, usar las mismas capas o introducir nuevas. Esto le da al artista flexibilidad a la hora de ajustar sus colecciones a sus necesidades.
